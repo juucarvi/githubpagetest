@@ -1,0 +1,115 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    font-size: 16px; /* Base para rem, si se quiere ajustar se puede cambiar aquí */
+}
+
+.screen-one {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    padding: 2vw;
+    box-sizing: border-box;
+    background-color: white;
+    text-align: center;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.logo img {
+    width: 12.5vw;
+    max-width: 3.125rem;
+}
+
+.brand h1 {
+    font-weight: 900;
+    font-size: 2.7rem;
+    margin: 0;
+    letter-spacing: -0.07rem;
+    text-align: left;
+}
+
+.text h2 {
+    font-weight: 800;
+    font-size: 3.5rem;
+    letter-spacing: -0.15rem;
+    line-height: 1;
+    margin: 0;
+}
+
+.image img {
+    width: 21.875vw;
+    max-width: 21.875rem;
+    margin-top: -1.875rem;
+    margin-bottom: 0.625rem;
+}
+
+/* Nueva sección que aparece al hacer scroll */
+.scroll-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh; /* Ajuste de la altura para asegurar visibilidad */
+    background-color: white;
+    text-align: center;
+    padding-top: 0vh; /* Ajuste la altura del texto dentro del contenedor */
+    margin-top: -5vh; /* Reducción para mayor proximidad */
+}
+
+.centered-message {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.centered-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Media Queries para dispositivos más pequeños */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .logo img {
+        width: 25vw;
+    }
+
+    .brand h1 {
+        font-size: 5vw;
+        text-align: center;
+    }
+
+    .text h2 {
+        font-size: 6vw;
+    }
+
+    .image img {
+        width: 50vw;
+    }
+
+    .scroll-content {
+        height: 60vh; /* Se ajusta para pantallas más pequeñas */
+        margin-top: -5vh; /* Ajuste para mantener la visibilidad en pantallas pequeñas */
+    }
+}
